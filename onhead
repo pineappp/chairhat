@@ -54,9 +54,11 @@ export default class WearAHat {
 
             if(this.params.content_pack){
                 // Specify a url to a JSON file
-                // https://account.altvr.com/content_packs/1690384237070385856
+                //https://account.altvr.com/content_packs/1690384237070385856
                 // e.g. ws://10.0.1.89:3901?content_pack=1690384237070385856
-
+{
+    "KIT_TEST": {
+        "resourceId": "artifact: 1690387323448983933"
                 fetch('https://account.altvr.com/api/content_packs/' + this.params.content_pack + '/raw.json')
                     .then((res: any) => res.json())
                     .then((json: any) => {
@@ -65,7 +67,7 @@ export default class WearAHat {
                     })
            }
            switch(this.params.kit) {
-                    case "city_helmets": {
+                    case "KIT_TEST": {
                         this.HatDatabase = Object.assign({}, require('../public/data/1690384237070385856_KIT_TEST.json'), require('../public/defaults.json'));
                         break;  
                         } }
